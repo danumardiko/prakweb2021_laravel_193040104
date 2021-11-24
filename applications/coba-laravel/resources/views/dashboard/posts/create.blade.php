@@ -5,7 +5,8 @@
   </div>
 <div class="col-lg-8">
     
-    <form method="post" action="/dashboard/posts">
+    <form method="post" action="/dashboard/posts"> 
+      {{-- padahal ini udah bener --}}
         @csrf
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
