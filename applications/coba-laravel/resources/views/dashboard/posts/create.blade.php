@@ -5,7 +5,7 @@
   </div>
 <div class="col-lg-8">
     
-    <form method="post" action="/dashboard/posts"> 
+    <form method="post" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data"> 
       {{-- padahal ini udah bener --}}
         @csrf
       <div class="mb-3">
@@ -30,7 +30,7 @@
         @enderror   
       </div>
       <div class="mb-3">
-        <label for="category" class="form-label">Slug</label>
+        <label for="category" class="form-label">Category</label>
         <select class="form-select" name="category_id">
           @foreach ($categories as $category)
           @if (old('category_id') == $category->id)
@@ -41,6 +41,16 @@
           @endforeach
         </select>
       </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Post Image</label>
+        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
+        @error('image')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror 
+      </div>
+
       
       <div class="mb-3">
         <label for="body" class="form-label">Body</label>
