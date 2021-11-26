@@ -5,7 +5,7 @@
   </div>
 <div class="col-lg-8">
     
-    <form method="post" action="/dashboard/posts/{{ $post->slug }}"> 
+    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5"> 
       {{-- padahal ini udah bener --}}
       @method('put')
         @csrf
